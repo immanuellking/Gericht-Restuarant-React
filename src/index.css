@@ -1,13 +1,106 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+ 
+} 
+
+a {
+  color: unset;
+  text-decoration: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.menu_fits .sub_head {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.p__opensans {
+  @apply font-fontAlt text-color-white font-normal tracking-tighter capitalize leading-7 text-sm sm:text-base ;
+}
+
+.p__cormorant {
+  @apply font-fontBase text-color-white font-bold -tracking-tighter capitalize leading-8 text-2xl
+}
+
+.flex__center {
+  @apply flex justify-center items-center;
+}
+
+.app__wrapper {
+  @apply flex justify-between items-center min-h-screen;
+}
+
+.app__wrapper_info {
+  @apply flex-1 w-full flex justify-center items-start flex-col;
+}
+
+.app__wrapper_img {
+  @apply flex-1 w-full flex justify-center items-center ml-8
+}
+
+.app__wrapper_img-reverse {
+  @apply justify-start mr-8 ml-0;
+}
+
+.section__padding {
+  @apply py-16 px-8 md:py-16 md:px-24 sm:p-16
+}
+
+.custom__button {
+  @apply bg-color-crimson text-color-black font-fontBase font-bold tracking-wider leading-7 text-base py-2 px-6 rounded-sm cursor-pointer border-0 outline-0 hover:bg-color-golden hover:text-color-white;
+}
+
+.headtext__cormorant {
+  @apply font-fontBase text-color-golden text-6xl capitalize;
+  line-height: 83.2px;
+  letter-spacing: 0.04em;
+}
+
+/* .app__gallery-images_container {
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.app__gallery-images_container::-webkit-scrollbar {
+  display: none;
+} */
+
+
+
+.slide-bottom {
+  -webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(-25%);
+            transform: translateY(-25%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(-25%);
+            transform: translateY(-25%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
